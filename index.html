@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weight converter</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.header {
+    background-color: #91ff00;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+#output {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: red;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                Weight Converter
+            </h1>
+        </div>
+        <div class="input">
+            <label for="input" id="input-label">Weights in KG
+            </label>
+            <input type="text" id="input" placeholder="Enter your weights in KG">
+        </div>
+        <div class="output">
+            Your Weight in Pounds<p id="output">0</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const input = document.querySelector('#input');
+    const output = document.querySelector('#output');
+
+
+   input.addEventListener("input",()=>{
+    let val = input.value;
+    let out = val*2.2;
+    output.innerHTML = out.toFixed(2);
+})
+</script>
